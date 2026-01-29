@@ -1,0 +1,107 @@
+# Language used when:
+# - A player has no language saved
+# - A translation key is missing
+# IMPORTANT:
+# This value MUST match a registered language name below
+default: "english"
+
+# COMMAND ALIASES
+# These commands are SHORTCUTS for changing your own language
+# They behave like:
+#   /lang <locale|language>
+#
+# Examples:
+#   /lang spanish
+#   /idioma german
+#   /sprache язык
+#
+# NOTE:
+# - These commands DO NOT replace /atlaslang
+# - They are player-only language selectors
+# - Changes here REQUIRE a server restart
+commands:
+  - lang
+  - language
+  - idioma
+  - lenguaje
+  - lingua
+  - idioma
+  - langue
+  - sprache
+  - lingua
+  - jezyk
+  - yazyk
+  - язык
+  - yuyan
+  - 语言
+
+# DATABASE SETTINGS
+# Supported types:
+# - h2    : Local embedded database (single server)
+# - mysql : External database (recommended for networks)
+#
+# NOTE:
+# - MySQL settings are ignored if type = h2
+database:
+  type: "h2"
+  address: "localhost"
+  port: 3306
+  database: "nautic"
+  username: "root"
+  password: "password"
+
+# REGISTERED LANGUAGES
+# Format:
+#   LOCALE:LANGUAGE_NAME:MAIN_FILE
+#
+# Example:
+#   en_US:english:english.yml
+#
+# How it works:
+# - On startup or /atlaslang reload:
+#   • The language folder is created automatically
+#   • The main .yml file is created if missing
+#   • Files are loaded into memory
+#
+# IMPORTANT:
+# - You CAN add/remove languages and use /atlaslang reload
+# - No server restart needed for this section
+register:
+  languages:
+    - "en_US:english:english.yml"
+    - "es_ES:spanish:spanish.yml"
+    - "ru_RU:russian:russian.yml"
+    - "zh_CN:chinese:chinese.yml"
+    - "ja_JP:japanese:japanese.yml"
+    - "ko_KR:korean:korean.yml"
+    - "fr_FR:french:french.yml"
+    - "de_DE:german:german.yml"
+    - "it_IT:italian:italian.yml"
+    - "pl_PL:polish:polish.yml"
+    - "pt_BR:portuguese:portuguese.yml"
+
+# GITHUB SYNCHRONIZATION
+# This section enables synchronization of language files
+# directly from a GitHub repository.
+#
+# It supports live updates, file creation, overwriting
+# and optional cleanup of unused files.
+# Synchronization can be triggered via command.
+github:
+  repository:
+    name: "owner/repo"        # GitHub repository in owner/repository format
+    branch: "main"            # Branch used for synchronization
+
+  authentication:
+    type: "none"              # none | token
+    token: ""                 # GitHub Personal Access Token (if type = token)
+
+  paths:
+    remote-root: "languages"  # Folder path inside the GitHub repository
+    local-root: "languages"   # Local plugin folder for language files
+
+  sync:
+    create-missing: true      # Download files missing locally
+    overwrite-existing: true  # Overwrite local files with GitHub versions
+    delete-missing: false     # Delete local files not present on GitHub
+    reload-after-sync: true   # Reload languages after sync completes
