@@ -2,13 +2,15 @@ help: |
   <empty>
   &#35ADFF&l  AtlasLang &#CDCDCD- &fバージョン: &#38FF35{version}
   <empty>
-  &#38FF35  /AtlasLang help &#CDCDCD- &fこのメッセージを表示
-  &#38FF35  /AtlasLang list &#CDCDCD- &f登録されている言語を一覧表示
-  &#38FF35  /AtlasLang aliases &#CDCDCD- &fコマンドの別名を表示
-  &#38FF35  /AtlasLang set &#FFD935<player> <language> &#CDCDCD- &fプレイヤーの言語を変更
-  &#38FF35  /AtlasLang reset &#FFD935<player> &#CDCDCD- &fデフォルト言語に戻す
-  &#38FF35  /AtlasLang info &#FFD935<player> &#CDCDCD- &fプレイヤーの言語を表示
-  &#38FF35  /AtlasLang reload &#CDCDCD- &fプラグインと言語を再読み込み
+  &#38FF35  /atlaslang help &#CDCDCD- &fこのメッセージを表示
+  &#38FF35  /atlaslang list &#CDCDCD- &f登録されている言語を一覧表示
+  &#38FF35  /atlaslang aliases &#CDCDCD- &fコマンドの別名を表示
+  &#38FF35  /atlaslang set &#FFD935<player> <language> &#CDCDCD- &fプレイヤーの言語を変更
+  &#38FF35  /atlaslang reset &#FFD935<player> &#CDCDCD- &fデフォルト言語に戻す
+  &#38FF35  /atlaslang info &#FFD935<player> &#CDCDCD- &fプレイヤーの言語を表示
+  &#38FF35  /atlaslang reload &#CDCDCD- &fプラグインと言語を再読み込み
+  &#38FF35  /atlaslang github status &#CDCDCD- &fGitHub の接続状態とリポジトリ情報を表示
+  &#38FF35  /atlaslang github sync &#CDCDCD- &fすべての言語を GitHub リポジトリと同期
   <empty>
 
 not_found_path: "&#FF3535パスが見つかりません: &#FFD935{path}"
@@ -27,9 +29,9 @@ aliases:
 
 usage:
   language-command: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/lang <locale/lang>"
-  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/AtlasLang set &#CDCDCD<player> <language>"
-  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/AtlasLang reset &#CDCDCD<player>"
-  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/AtlasLang info &#CDCDCD<player>"
+  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/atlaslang set &#CDCDCD<player> <language>"
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/atlaslang reset &#CDCDCD<player>"
+  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/atlaslang info &#CDCDCD<player>"
 
 info:
   format: "&#35ADFF&lAtlasLang &#CDCDCD» &fプレイヤー &#CDCDCD{player} &#38FF35の言語 ({language})"
@@ -41,7 +43,7 @@ success:
   reload: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35再読み込みが完了しました。"
 
 github:
-  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/AtlasLang github <sync|status>"
+  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/atlaslang github <sync|status>"
 
   sync:
     start: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35GitHub 同期を開始しています..."

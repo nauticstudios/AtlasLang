@@ -9,6 +9,8 @@ help: |
   &#38FF35  /atlaslang reset &#FFD935<player> &#CDCDCD- &fReset language to default
   &#38FF35  /atlaslang info &#FFD935<player> &#CDCDCD- &fShow player's language
   &#38FF35  /atlaslang reload &#CDCDCD- &fReload the plugin and languages
+  &#38FF35  /atlaslang github status &#CDCDCD- &fView GitHub connection status and repository information
+  &#38FF35  /atlaslang github sync &#CDCDCD- &fSynchronize all languages with the GitHub repository
   <empty>
 
 not_found_path: "&#FF3535Path not found: &#FFD935{path}"

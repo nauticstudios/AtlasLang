@@ -2,13 +2,15 @@ help: |
   <empty>
   &#35ADFF&l  AtlasLang &#CDCDCD- &f버전: &#38FF35{version}
   <empty>
-  &#38FF35  /AtlasLang help &#CDCDCD- &f이 메시지 표시
-  &#38FF35  /AtlasLang list &#CDCDCD- &f등록된 언어 목록
-  &#38FF35  /AtlasLang aliases &#CDCDCD- &f명령어 별칭 표시
-  &#38FF35  /AtlasLang set &#FFD935<player> <language> &#CDCDCD- &f플레이어 언어 변경
-  &#38FF35  /AtlasLang reset &#FFD935<player> &#CDCDCD- &f기본 언어로 복원
-  &#38FF35  /AtlasLang info &#FFD935<player> &#CDCDCD- &f플레이어 언어 표시
-  &#38FF35  /AtlasLang reload &#CDCDCD- &f플러그인 및 언어 리로드
+  &#38FF35  /atlaslang help &#CDCDCD- &f이 메시지 표시
+  &#38FF35  /atlaslang list &#CDCDCD- &f등록된 언어 목록
+  &#38FF35  /atlaslang aliases &#CDCDCD- &f명령어 별칭 표시
+  &#38FF35  /atlaslang set &#FFD935<player> <language> &#CDCDCD- &f플레이어 언어 변경
+  &#38FF35  /atlaslang reset &#FFD935<player> &#CDCDCD- &f기본 언어로 복원
+  &#38FF35  /atlaslang info &#FFD935<player> &#CDCDCD- &f플레이어 언어 표시
+  &#38FF35  /atlaslang reload &#CDCDCD- &f플러그인 및 언어 리로드
+  &#38FF35  /atlaslang github status &#CDCDCD- &fGitHub 연결 상태 및 저장소 정보 확인
+  &#38FF35  /atlaslang github sync &#CDCDCD- &f모든 언어를 GitHub 저장소와 동기화
   <empty>
 
 not_found_path: "&#FF3535경로를 찾을 수 없습니다: &#FFD935{path}"
@@ -27,9 +29,9 @@ aliases:
 
 usage:
   language-command: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/lang <locale/lang>"
-  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/AtlasLang set &#CDCDCD<player> <language>"
-  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/AtlasLang reset &#CDCDCD<player>"
-  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/AtlasLang info &#CDCDCD<player>"
+  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/atlaslang set &#CDCDCD<player> <language>"
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/atlaslang reset &#CDCDCD<player>"
+  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/atlaslang info &#CDCDCD<player>"
 
 info:
   format: "&#35ADFF&lAtlasLang &#CDCDCD» &f플레이어 &#CDCDCD{player} &#38FF35의 언어 ({language})"
@@ -41,7 +43,7 @@ success:
   reload: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35리로드가 성공적으로 완료되었습니다."
 
 github:
-  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/AtlasLang github <sync|status>"
+  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/atlaslang github <sync|status>"
 
   sync:
     start: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35GitHub 동기화를 시작하는 중..."

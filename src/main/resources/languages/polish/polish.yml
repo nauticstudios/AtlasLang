@@ -9,6 +9,8 @@ help: |
   &#38FF35  /atlaslang reset &#FFD935<gracz> &#CDCDCD- &fResetuje język do domyślnego
   &#38FF35  /atlaslang info &#FFD935<gracz> &#CDCDCD- &fPokazuje język gracza
   &#38FF35  /atlaslang reload &#CDCDCD- &fPrzeładowuje plugin i języki
+  &#38FF35  /atlaslang github status &#CDCDCD- &fWyświetl status połączenia z GitHubem i informacje o repozytorium
+  &#38FF35  /atlaslang github sync &#CDCDCD- &fSynchronizuj wszystkie języki z repozytorium GitHub
   <empty>
 
 not_found_path: "&#FF3535Ścieżka nie znaleziona: &#FFD935{path}"

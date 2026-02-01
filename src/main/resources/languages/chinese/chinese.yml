@@ -2,13 +2,15 @@ help: |
   <empty>
   &#35ADFF&l  AtlasLang &#CDCDCD- &f版本: &#38FF35{version}
   <empty>
-  &#38FF35  /AtlasLang help &#CDCDCD- &f显示此消息
-  &#38FF35  /AtlasLang list &#CDCDCD- &f列出已注册的语言
-  &#38FF35  /AtlasLang aliases &#CDCDCD- &f显示命令别名
-  &#38FF35  /AtlasLang set &#FFD935<player> <language> &#CDCDCD- &f更改玩家语言
-  &#38FF35  /AtlasLang reset &#FFD935<player> &#CDCDCD- &f恢复默认语言
-  &#38FF35  /AtlasLang info &#FFD935<player> &#CDCDCD- &f显示玩家语言
-  &#38FF35  /AtlasLang reload &#CDCDCD- &f重新加载插件和语言
+  &#38FF35  /atlaslang help &#CDCDCD- &f显示此消息
+  &#38FF35  /atlaslang list &#CDCDCD- &f列出已注册的语言
+  &#38FF35  /atlaslang aliases &#CDCDCD- &f显示命令别名
+  &#38FF35  /atlaslang set &#FFD935<player> <language> &#CDCDCD- &f更改玩家语言
+  &#38FF35  /atlaslang reset &#FFD935<player> &#CDCDCD- &f恢复默认语言
+  &#38FF35  /atlaslang info &#FFD935<player> &#CDCDCD- &f显示玩家语言
+  &#38FF35  /atlaslang reload &#CDCDCD- &f重新加载插件和语言
+  &#38FF35  /atlaslang github status &#CDCDCD- &f查看 GitHub 连接状态和仓库信息
+  &#38FF35  /atlaslang github sync &#CDCDCD- &f与 GitHub 仓库同步所有语言
   <empty>
 
 not_found_path: "&#FF3535未找到路径: &#FFD935{path}"
@@ -27,9 +29,9 @@ aliases:
 
 usage:
   language-command: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/lang <locale/lang>"
-  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/AtlasLang set &#CDCDCD<player> <language>"
-  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/AtlasLang reset &#CDCDCD<player>"
-  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/AtlasLang info &#CDCDCD<player>"
+  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/atlaslang set &#CDCDCD<player> <language>"
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/atlaslang reset &#CDCDCD<player>"
+  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/atlaslang info &#CDCDCD<player>"
 
 info:
   format: "&#35ADFF&lAtlasLang &#CDCDCD» &f玩家 &#CDCDCD{player} &#38FF35的语言 ({language})"
@@ -41,7 +43,7 @@ success:
   reload: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35重新加载成功."
 
 github:
-  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/AtlasLang github <sync|status>"
+  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/atlaslang github <sync|status>"
 
   sync:
     start: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35正在开始 GitHub 同步..."
