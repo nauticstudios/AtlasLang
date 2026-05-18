@@ -78,6 +78,38 @@ register:
     - "pl_PL:polish:polish.yml"
     - "pt_BR:portuguese:portuguese.yml"
 
+# PERFORMANCE AND RUNTIME TUNING
+# Defaults are tuned for big networks (1000+ players).
+# Only edit if you know what you are doing.
+performance:
+
+  # Auto-reload language files when modified on disk.
+  # SCOPE: ONLY files inside plugins/AtlasLang/languages/ (recursively).
+  # Changes to this config.yml ALWAYS require /atlaslang reload.
+  #
+  # Disable to save one daemon thread and OS file handles.
+  # Toggling this value requires a server restart.
+  auto-reload-languages: true
+
+  # Debounce window (in milliseconds) for file change events.
+  # Editors (IntelliJ, VSCode, ...) fire several events per save —
+  # this collapses them into a single reload.
+  # Clamped to [50, 5000].
+  reload-debounce-ms: 250
+
+  # Preload a player's language on join (async, before they enter).
+  # When TRUE: zero DB queries during gameplay (placeholders use the cache).
+  # When FALSE: language is loaded lazily on first request (1 DB hit per player).
+  # Recommended TRUE for networks with frequent placeholder calls.
+  preload-on-join: true
+
+# Verbose console logging. Off by default.
+# Enables debug output for:
+#   - Auto-reload file events
+#   - Cache preload failures
+#   - Database operations
+debug: false
+
 # GITHUB SYNCHRONIZATION
 # This section enables synchronization of language files
 # directly from a GitHub repository.

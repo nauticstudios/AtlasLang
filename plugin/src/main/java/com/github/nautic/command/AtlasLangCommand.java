@@ -226,7 +226,7 @@ public final class AtlasLangCommand implements CommandExecutor {
             case "reload": {
                 if (denied(sender, userLang, "reload")) return true;
 
-                plugin.reloadConfig();
+                plugin.reloadSettings();
                 languageManager.reloadLanguages(plugin.getConfig());
 
                 sender.sendMessage(lang.get(userLang, userLang, "success.reload"));

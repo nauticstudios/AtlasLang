@@ -6,11 +6,13 @@ import com.github.nautic.cache.LanguageCache;
 import com.github.nautic.command.AtlasLangCommand;
 import com.github.nautic.command.AtlasLangTabCompleter;
 import com.github.nautic.command.alias.AliasRegistrar;
+import com.github.nautic.config.PluginSettings;
 import com.github.nautic.database.DatabaseManager;
 import com.github.nautic.expansion.InfoExpansion;
 import com.github.nautic.expansion.MessageExpansion;
 import com.github.nautic.github.GitHubSyncManager;
 import com.github.nautic.language.LanguageFileLoader;
+import com.github.nautic.language.LanguageFileWatcher;
 import com.github.nautic.language.LanguageHandler;
 import com.github.nautic.language.LanguageManager;
 import com.github.nautic.library.Libraries;
@@ -32,9 +34,11 @@ public final class AtlasLang extends JavaPlugin {
 
     private static AtlasLang instance;
 
+    private PluginSettings settings;
     private LanguageFileLoader languageFileLoader;
     private LanguageManager languageManager;
     private LanguageHandler languageHandler;
+    private LanguageFileWatcher fileWatcher;
     private LanguageCache languageCache;
     private GitHubSyncManager gitHubSyncManager;
 
@@ -73,6 +77,7 @@ public final class AtlasLang extends JavaPlugin {
         new UpdateListener(this, 132278);
 
         saveDefaultConfig();
+        settings = new PluginSettings(getConfig());
 
         File baseLangFolder = new File(getDataFolder(), "languages");
         if (!baseLangFolder.exists() && !baseLangFolder.mkdirs()) {
@@ -85,6 +90,13 @@ public final class AtlasLang extends JavaPlugin {
 
         languageManager.loadLanguagesFromConfig(getConfig());
         logRegisteredLanguages();
+
+        if (settings.isAutoReloadLanguages()) {
+            fileWatcher = new LanguageFileWatcher(this, languageFileLoader, baseLangFolder);
+            fileWatcher.start();
+        } else {
+            getLogger().info("Auto-reload disabled in config. Use /atlaslang reload to apply YAML changes.");
+        }
 
         DatabaseManager.loadDatabase();
 
@@ -106,18 +118,35 @@ public final class AtlasLang extends JavaPlugin {
             getLogger().warning("PlaceholderAPI not found.");
         }
 
-        getLogger().info("AtlasLang enabled successfully.");
+        getLogger().info("AtlasLang " + getDescription().getVersion() + " enabled successfully.");
     }
 
     @Override
     public void onDisable() {
         AtlasProvider.unregister();
+        if (fileWatcher != null) fileWatcher.stop();
         if (languageCache != null) languageCache.clear();
         DatabaseManager.close();
     }
 
+    /**
+     * Reloads the on-disk config and refreshes the runtime settings.
+     * Called by /atlaslang reload.
+     *
+     * <p>Note: changes to {@code performance.auto-reload-languages} require
+     * a server restart — the watcher is started/stopped once at boot.</p>
+     */
+    public void reloadSettings() {
+        reloadConfig();
+        settings = new PluginSettings(getConfig());
+    }
+
     public static AtlasLang getInstance() {
         return instance;
+    }
+
+    public PluginSettings getSettings() {
+        return settings;
     }
 
     public LanguageFileLoader getLanguageFileLoader() {
