@@ -1,0 +1,68 @@
+help: |
+  <empty>
+  &#35ADFF&l  AtlasLang &#CDCDCD- &f버전: &#38FF35{version}
+  <empty>
+  &#38FF35  /atlaslang help &#CDCDCD- &f이 메시지 표시
+  &#38FF35  /atlaslang list &#CDCDCD- &f등록된 언어 목록
+  &#38FF35  /atlaslang aliases &#CDCDCD- &f명령어 별칭 표시
+  &#38FF35  /atlaslang set &#FFD935<player> <language> &#CDCDCD- &f플레이어 언어 변경
+  &#38FF35  /atlaslang reset &#FFD935<player> &#CDCDCD- &f기본 언어로 복원
+  &#38FF35  /atlaslang info &#FFD935<player> &#CDCDCD- &f플레이어 언어 표시
+  &#38FF35  /atlaslang reload &#CDCDCD- &f플러그인 및 언어 리로드
+  &#38FF35  /atlaslang github status &#CDCDCD- &fGitHub 연결 상태 및 저장소 정보 확인
+  &#38FF35  /atlaslang github sync &#CDCDCD- &f모든 언어를 GitHub 저장소와 동기화
+  <empty>
+
+not_found_path: "&#FF3535경로를 찾을 수 없습니다: &#FFD935{path}"
+invalid_lang_format: "&#FF3535잘못된 언어 형식: &#FFD935{input}"
+invalid_placeholder_format: "&#FF3535잘못된 플레이스홀더 형식: &#FFD935{placeholder}"
+file_not_found: "&#FF3535파일을 찾을 수 없습니다: &#FFD935{file}"
+not_translated: "&#FFD935번역되지 않음: &#38FF35{path}"
+
+list:
+  header: "&#35ADFF&lAtlasLang &#CDCDCD» &f등록된 언어:"
+  format: "&#CDCDCD  - &#FFD935{locale} &#CDCDCD→ &#38FF35{language}"
+
+aliases:
+  header: "&#35ADFF&lAtlasLang &#CDCDCD» &f명령어 별칭:"
+  format: "&#CDCDCD  - &#38FF35{command}"
+
+usage:
+  language-command: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/lang <locale/lang>"
+  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/atlaslang set &#CDCDCD<player> <language>"
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/atlaslang reset &#CDCDCD<player>"
+  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/atlaslang info &#CDCDCD<player>"
+
+info:
+  format: "&#35ADFF&lAtlasLang &#CDCDCD» &f플레이어 &#CDCDCD{player} &#38FF35의 언어 ({language})"
+
+success:
+  other-language-set: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35플레이어 &f{player} &#38FF35의 언어가 &#FFD935{language}&#38FF35 로 변경되었습니다."
+  language-set: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35당신의 언어가 &#FFD935{language}&#38FF35 로 변경되었습니다."
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35플레이어 &f{player} &#38FF35의 언어가 초기화되었습니다."
+  reload: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35리로드가 성공적으로 완료되었습니다."
+
+github:
+  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535올바른 사용법: &f/atlaslang github <sync|status>"
+
+  sync:
+    start: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35GitHub 동기화를 시작하는 중..."
+    success: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35GitHub 동기화가 성공적으로 완료되었습니다."
+    no-changes: "&#35ADFF&lAtlasLang &#CDCDCD» &#FFD935변경 사항이 감지되지 않았습니다. 모두 최신 상태입니다."
+    failed: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535GitHub 동기화에 실패했습니다. 콘솔을 확인하세요."
+
+  status:
+    header: "&#35ADFF&lAtlasLang &#CDCDCD» &fGitHub 동기화 상태:"
+    repository: "&#CDCDCD  • &#38FF35저장소: &#FFD935{repo}"
+    branch: "&#CDCDCD  • &#38FF35브랜치: &#FFD935{branch}"
+    auth: "&#CDCDCD  • &#38FF35인증 방식: &#FFD935{auth}"
+    remote-root: "&#CDCDCD  • &#38FF35원격 경로: &#FFD935{path}"
+    local-root: "&#CDCDCD  • &#38FF35로컬 경로: &#FFD935{path}"
+    create-missing: "&#CDCDCD  • &#38FF35누락된 파일 생성: &#FFD935{value}"
+    overwrite-existing: "&#CDCDCD  • &#38FF35기존 파일 덮어쓰기: &#FFD935{value}"
+    delete-missing: "&#CDCDCD  • &#38FF35불필요한 파일 삭제: &#FFD935{value}"
+    reload-after-sync: "&#CDCDCD  • &#38FF35동기화 후 리로드: &#FFD935{value}"
+
+errors:
+  no-permission: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535이 명령어를 사용할 권한이 없습니다."
+  language-not-found: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535언어 &#FFD935{input} &#FF3535는 등록되지 않았습니다."

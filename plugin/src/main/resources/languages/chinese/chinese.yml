@@ -1,0 +1,68 @@
+help: |
+  <empty>
+  &#35ADFF&l  AtlasLang &#CDCDCD- &f版本: &#38FF35{version}
+  <empty>
+  &#38FF35  /atlaslang help &#CDCDCD- &f显示此消息
+  &#38FF35  /atlaslang list &#CDCDCD- &f列出已注册的语言
+  &#38FF35  /atlaslang aliases &#CDCDCD- &f显示命令别名
+  &#38FF35  /atlaslang set &#FFD935<player> <language> &#CDCDCD- &f更改玩家语言
+  &#38FF35  /atlaslang reset &#FFD935<player> &#CDCDCD- &f恢复默认语言
+  &#38FF35  /atlaslang info &#FFD935<player> &#CDCDCD- &f显示玩家语言
+  &#38FF35  /atlaslang reload &#CDCDCD- &f重新加载插件和语言
+  &#38FF35  /atlaslang github status &#CDCDCD- &f查看 GitHub 连接状态和仓库信息
+  &#38FF35  /atlaslang github sync &#CDCDCD- &f与 GitHub 仓库同步所有语言
+  <empty>
+
+not_found_path: "&#FF3535未找到路径: &#FFD935{path}"
+invalid_lang_format: "&#FF3535无效的语言格式: &#FFD935{input}"
+invalid_placeholder_format: "&#FF3535无效的占位符格式: &#FFD935{placeholder}"
+file_not_found: "&#FF3535未找到文件: &#FFD935{file}"
+not_translated: "&#FFD935未翻译: &#38FF35{path}"
+
+list:
+  header: "&#35ADFF&lAtlasLang &#CDCDCD» &f已注册的语言:"
+  format: "&#CDCDCD  - &#FFD935{locale} &#CDCDCD→ &#38FF35{language}"
+
+aliases:
+  header: "&#35ADFF&lAtlasLang &#CDCDCD» &f命令别名:"
+  format: "&#CDCDCD  - &#38FF35{command}"
+
+usage:
+  language-command: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/lang <locale/lang>"
+  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/atlaslang set &#CDCDCD<player> <language>"
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/atlaslang reset &#CDCDCD<player>"
+  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/atlaslang info &#CDCDCD<player>"
+
+info:
+  format: "&#35ADFF&lAtlasLang &#CDCDCD» &f玩家 &#CDCDCD{player} &#38FF35的语言 ({language})"
+
+success:
+  other-language-set: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35玩家 &f{player} &#38FF35的语言已更改为 &#FFD935{language}&#38FF35."
+  language-set: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35你的语言已更改为 &#FFD935{language}&#38FF35."
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35玩家 &f{player} &#38FF35的语言已重置."
+  reload: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35重新加载成功."
+
+github:
+  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正确用法: &f/atlaslang github <sync|status>"
+
+  sync:
+    start: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35正在开始 GitHub 同步..."
+    success: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35GitHub 同步已成功完成。"
+    no-changes: "&#35ADFF&lAtlasLang &#CDCDCD» &#FFD935未检测到更改，所有内容均为最新。"
+    failed: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535GitHub 同步失败，请检查控制台。"
+
+  status:
+    header: "&#35ADFF&lAtlasLang &#CDCDCD» &fGitHub 同步状态:"
+    repository: "&#CDCDCD  • &#38FF35仓库: &#FFD935{repo}"
+    branch: "&#CDCDCD  • &#38FF35分支: &#FFD935{branch}"
+    auth: "&#CDCDCD  • &#38FF35认证方式: &#FFD935{auth}"
+    remote-root: "&#CDCDCD  • &#38FF35远程路径: &#FFD935{path}"
+    local-root: "&#CDCDCD  • &#38FF35本地路径: &#FFD935{path}"
+    create-missing: "&#CDCDCD  • &#38FF35创建缺失文件: &#FFD935{value}"
+    overwrite-existing: "&#CDCDCD  • &#38FF35覆盖已有文件: &#FFD935{value}"
+    delete-missing: "&#CDCDCD  • &#38FF35删除多余文件: &#FFD935{value}"
+    reload-after-sync: "&#CDCDCD  • &#38FF35同步后重新加载: &#FFD935{value}"
+
+errors:
+  no-permission: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535你没有权限使用此命令."
+  language-not-found: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535语言 &#FFD935{input} &#FF3535未注册."

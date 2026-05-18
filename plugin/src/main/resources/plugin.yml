@@ -1,0 +1,19 @@
+#                                                            Developed by Senkex
+#                                                        (Nautic Studios @ (C) 2026)
+
+name: AtlasLang
+version: '${project.version}'
+author: 'Senkex'
+
+api-version: '1.16'
+
+main: com.github.nautic.AtlasLang
+website: "https://github.com/nauticstudios/AtlasLang"
+
+depend:
+  - PlaceholderAPI
+
+commands:
+  atlaslang:
+    description: 'AtlasLang - Original command'
+    aliases: [alang]

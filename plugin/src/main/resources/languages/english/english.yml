@@ -1,0 +1,68 @@
+help: |
+  <empty>
+  &#35ADFF&l  AtlasLang &#CDCDCD- &fVersion: &#38FF35{version}
+  <empty>
+  &#38FF35  /atlaslang help &#CDCDCD- &fShow this message
+  &#38FF35  /atlaslang list &#CDCDCD- &fList registered languages
+  &#38FF35  /atlaslang aliases &#CDCDCD- &fShow command aliases
+  &#38FF35  /atlaslang set &#FFD935<player> <language> &#CDCDCD- &fChange a player's language
+  &#38FF35  /atlaslang reset &#FFD935<player> &#CDCDCD- &fReset language to default
+  &#38FF35  /atlaslang info &#FFD935<player> &#CDCDCD- &fShow player's language
+  &#38FF35  /atlaslang reload &#CDCDCD- &fReload the plugin and languages
+  &#38FF35  /atlaslang github status &#CDCDCD- &fView GitHub connection status and repository information
+  &#38FF35  /atlaslang github sync &#CDCDCD- &fSynchronize all languages with the GitHub repository
+  <empty>
+
+not_found_path: "&#FF3535Path not found: &#FFD935{path}"
+invalid_lang_format: "&#FF3535Invalid language format: &#FFD935{input}"
+invalid_placeholder_format: "&#FF3535Invalid placeholder format: &#FFD935{placeholder}"
+file_not_found: "&#FF3535File not found: &#FFD935{file}"
+not_translated: "&#FFD935Not translated: &#38FF35{path}"
+
+list:
+  header: "&#35ADFF&lAtlasLang &#CDCDCD» &fRegistered languages:"
+  format: "&#CDCDCD  - &#FFD935{locale} &#CDCDCD→ &#38FF35{language}"
+
+aliases:
+  header: "&#35ADFF&lAtlasLang &#CDCDCD» &fCommand aliases:"
+  format: "&#CDCDCD  - &#38FF35{command}"
+
+usage:
+  language-command: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535Correct usage: &f/lang <locale/lang>"
+  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535Correct usage: &f/atlaslang set &#CDCDCD<player> <language>"
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535Correct usage: &f/atlaslang reset &#CDCDCD<player>"
+  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535Correct usage: &f/atlaslang info &#CDCDCD<player>"
+
+info:
+  format: "&#35ADFF&lAtlasLang &#CDCDCD» &fLanguage of &#CDCDCD{player} &#38FF35({language})"
+
+success:
+  other-language-set: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35Language of &f{player} &#38FF35has been changed to &#FFD935{language}&#38FF35."
+  language-set: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35Your language has been changed to &#FFD935{language}&#38FF35."
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35Language of &f{player} &#38FF35has been reset."
+  reload: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35Reloaded successfully."
+
+github:
+  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535Correct usage: &f/atlaslang github <sync|status>"
+
+  sync:
+    start: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35Starting GitHub synchronization..."
+    success: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35GitHub synchronization completed successfully."
+    no-changes: "&#35ADFF&lAtlasLang &#CDCDCD» &#FFD935No changes detected. Everything is already up to date."
+    failed: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535GitHub synchronization failed. Check the console for details."
+
+  status:
+    header: "&#35ADFF&lAtlasLang &#CDCDCD» &fGitHub synchronization status:"
+    repository: "&#CDCDCD  • &#38FF35Repository: &#FFD935{repo}"
+    branch: "&#CDCDCD  • &#38FF35Branch: &#FFD935{branch}"
+    auth: "&#CDCDCD  • &#38FF35Authentication: &#FFD935{auth}"
+    remote-root: "&#CDCDCD  • &#38FF35Remote path: &#FFD935{path}"
+    local-root: "&#CDCDCD  • &#38FF35Local path: &#FFD935{path}"
+    create-missing: "&#CDCDCD  • &#38FF35Create missing files: &#FFD935{value}"
+    overwrite-existing: "&#CDCDCD  • &#38FF35Overwrite existing files: &#FFD935{value}"
+    delete-missing: "&#CDCDCD  • &#38FF35Delete missing files: &#FFD935{value}"
+    reload-after-sync: "&#CDCDCD  • &#38FF35Reload after sync: &#FFD935{value}"
+
+errors:
+  no-permission: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535You don't have permission to use this command."
+  language-not-found: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535Language &#FFD935{input} &#FF3535is not registered."

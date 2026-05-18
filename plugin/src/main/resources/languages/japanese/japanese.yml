@@ -1,0 +1,68 @@
+help: |
+  <empty>
+  &#35ADFF&l  AtlasLang &#CDCDCD- &fバージョン: &#38FF35{version}
+  <empty>
+  &#38FF35  /atlaslang help &#CDCDCD- &fこのメッセージを表示
+  &#38FF35  /atlaslang list &#CDCDCD- &f登録されている言語を一覧表示
+  &#38FF35  /atlaslang aliases &#CDCDCD- &fコマンドの別名を表示
+  &#38FF35  /atlaslang set &#FFD935<player> <language> &#CDCDCD- &fプレイヤーの言語を変更
+  &#38FF35  /atlaslang reset &#FFD935<player> &#CDCDCD- &fデフォルト言語に戻す
+  &#38FF35  /atlaslang info &#FFD935<player> &#CDCDCD- &fプレイヤーの言語を表示
+  &#38FF35  /atlaslang reload &#CDCDCD- &fプラグインと言語を再読み込み
+  &#38FF35  /atlaslang github status &#CDCDCD- &fGitHub の接続状態とリポジトリ情報を表示
+  &#38FF35  /atlaslang github sync &#CDCDCD- &fすべての言語を GitHub リポジトリと同期
+  <empty>
+
+not_found_path: "&#FF3535パスが見つかりません: &#FFD935{path}"
+invalid_lang_format: "&#FF3535無効な言語形式: &#FFD935{input}"
+invalid_placeholder_format: "&#FF3535無効なプレースホルダー形式: &#FFD935{placeholder}"
+file_not_found: "&#FF3535ファイルが見つかりません: &#FFD935{file}"
+not_translated: "&#FFD935未翻訳: &#38FF35{path}"
+
+list:
+  header: "&#35ADFF&lAtlasLang &#CDCDCD» &f登録済み言語:"
+  format: "&#CDCDCD  - &#FFD935{locale} &#CDCDCD→ &#38FF35{language}"
+
+aliases:
+  header: "&#35ADFF&lAtlasLang &#CDCDCD» &fコマンドの別名:"
+  format: "&#CDCDCD  - &#38FF35{command}"
+
+usage:
+  language-command: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/lang <locale/lang>"
+  set: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/atlaslang set &#CDCDCD<player> <language>"
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/atlaslang reset &#CDCDCD<player>"
+  info: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/atlaslang info &#CDCDCD<player>"
+
+info:
+  format: "&#35ADFF&lAtlasLang &#CDCDCD» &fプレイヤー &#CDCDCD{player} &#38FF35の言語 ({language})"
+
+success:
+  other-language-set: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35プレイヤー &f{player} &#38FF35の言語が &#FFD935{language}&#38FF35 に変更されました。"
+  language-set: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35あなたの言語が &#FFD935{language}&#38FF35 に変更されました。"
+  reset: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35プレイヤー &f{player} &#38FF35の言語がリセットされました。"
+  reload: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35再読み込みが完了しました。"
+
+github:
+  usage: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535正しい使い方: &f/atlaslang github <sync|status>"
+
+  sync:
+    start: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35GitHub 同期を開始しています..."
+    success: "&#35ADFF&lAtlasLang &#CDCDCD» &#38FF35GitHub 同期が正常に完了しました。"
+    no-changes: "&#35ADFF&lAtlasLang &#CDCDCD» &#FFD935変更は検出されませんでした。すべて最新です。"
+    failed: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535GitHub 同期に失敗しました。コンソールを確認してください。"
+
+  status:
+    header: "&#35ADFF&lAtlasLang &#CDCDCD» &fGitHub 同期ステータス:"
+    repository: "&#CDCDCD  • &#38FF35リポジトリ: &#FFD935{repo}"
+    branch: "&#CDCDCD  • &#38FF35ブランチ: &#FFD935{branch}"
+    auth: "&#CDCDCD  • &#38FF35認証方式: &#FFD935{auth}"
+    remote-root: "&#CDCDCD  • &#38FF35リモートパス: &#FFD935{path}"
+    local-root: "&#CDCDCD  • &#38FF35ローカルパス: &#FFD935{path}"
+    create-missing: "&#CDCDCD  • &#38FF35不足ファイルを作成: &#FFD935{value}"
+    overwrite-existing: "&#CDCDCD  • &#38FF35既存ファイルを上書き: &#FFD935{value}"
+    delete-missing: "&#CDCDCD  • &#38FF35不要ファイルを削除: &#FFD935{value}"
+    reload-after-sync: "&#CDCDCD  • &#38FF35同期後に再読み込み: &#FFD935{value}"
+
+errors:
+  no-permission: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535このコマンドを使用する権限がありません。"
+  language-not-found: "&#35ADFF&lAtlasLang &#CDCDCD» &#FF3535言語 &#FFD935{input} &#FF3535は登録されていません。"
