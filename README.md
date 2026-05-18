@@ -54,7 +54,7 @@ You can drop it into your project with JitPack:
 <dependency>
     <groupId>com.github.nauticstudios.AtlasLang</groupId>
     <artifactId>api</artifactId>
-    <version>v2.0.0</version>
+    <version>version</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.nauticstudios.AtlasLang:api:v2.0.0")
+    compileOnly("com.github.nauticstudios.AtlasLang:api:version")
 }
 ```
 
@@ -79,7 +79,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'com.github.nauticstudios.AtlasLang:api:v2.0.0'
+    compileOnly 'com.github.nauticstudios.AtlasLang:api:version'
 }
 ```
 
@@ -172,24 +172,6 @@ You can also guard against older AtlasLang versions during your `onEnable`:
 ```java
 AtlasAPI.requireVersion(2);
 ```
-
-### Server Installation
-
-Drop `AtlasLang-2.0.0.jar` into your `plugins/` folder and restart. PlaceholderAPI is required.
-On first boot the plugin creates `plugins/AtlasLang/` with a default `config.yml`, **11 languages**
-ready to use and an embedded H2 database.
-
-| Command | Description |
-|---|---|
-| `/atlaslang help` | Show help |
-| `/atlaslang list` | List registered languages |
-| `/atlaslang set <player> <lang>` | Change another player's language |
-| `/atlaslang reset <player>` | Reset to default |
-| `/atlaslang info <player>` | Show a player's current language |
-| `/atlaslang reload` | Reload config + language files |
-| `/atlaslang github sync` | Pull from configured GitHub repo |
-| `/atlaslang github status` | Show GitHub sync config |
-| `/lang <language>` | Player self-select (configurable aliases) |
 
 ### GitHub Sync
 
