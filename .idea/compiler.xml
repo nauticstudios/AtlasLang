@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AtlasLang" />
+        <module name="AtlasLang (1)" />
+        <module name="api" />
       </profile>
     </annotationProcessing>
   </component>

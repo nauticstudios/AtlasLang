@@ -7,19 +7,26 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.nautic</groupId>
-    <artifactId>AtlasLang</artifactId>
-    <version>1.1.0</version>
-    <packaging>jar</packaging>
+    <artifactId>AtlasLang-parent</artifactId>
+    <version>2.0.0</version>
+    <packaging>pom</packaging>
 
-    <name>AtlasLang</name>
+    <name>AtlasLang Parent</name>
+
+    <modules>
+        <module>api</module>
+        <module>plugin</module>
+    </modules>
 
     <properties>
         <java.version>17</java.version>
 
         <spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
+        <placeholderapi.version>2.11.6</placeholderapi.version>
         <adventure.version>4.21.0</adventure.version>
         <hikari.version>4.0.3</hikari.version>
         <bstats.version>3.0.2</bstats.version>
+        <annotations.version>23.0.0</annotations.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -29,190 +36,43 @@
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-
         <repository>
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/releases/</url>
         </repository>
     </repositories>
 
-    <dependencies>
-
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>${spigot.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>me.clip</groupId>
-            <artifactId>placeholderapi</artifactId>
-            <version>2.11.6</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>2.2.224</version>
-            <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>net.kyori</groupId>
-            <artifactId>adventure-api</artifactId>
-            <version>${adventure.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>net.kyori</groupId>
-            <artifactId>adventure-text-minimessage</artifactId>
-            <version>${adventure.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>net.kyori</groupId>
-            <artifactId>adventure-text-serializer-legacy</artifactId>
-            <version>${adventure.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.revxrsal</groupId>
-            <artifactId>zapper.api</artifactId>
-            <version>1.0.3</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>${hikari.version}</version>
-            <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>${bstats.version}</version>
-            <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-    </dependencies>
-
     <build>
-        <defaultGoal>clean package</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
+                    <configuration>
+                        <release>${java.version}</release>
+                    </configuration>
+                </plugin>
 
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.3.1</version>
+                </plugin>
 
-        <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.7.0</version>
+                </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/maven/**</exclude>
-                                        <exclude>META-INF/native-image/**</exclude>
-                                        <exclude>META-INF/versions/**</exclude>
-                                        <exclude>META-INF/services/**</exclude>
-
-                                        <exclude>META-INF/*.SF</exclude>
-                                        <exclude>META-INF/*.DSA</exclude>
-                                        <exclude>META-INF/*.RSA</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
-
-                            <relocations>
-                                <relocation>
-                                    <pattern>com.zaxxer.hikari</pattern>
-                                    <shadedPattern>com.github.nautic.libs.hikari</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>org.bstats</pattern>
-                                    <shadedPattern>com.github.nautic.libs.bstats</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>net.kyori</pattern>
-                                    <shadedPattern>com.github.nautic.libs.kyori</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>org.jetbrains</pattern>
-                                    <shadedPattern>com.github.nautic.libs.jetbrains</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>org.h2</pattern>
-                                    <shadedPattern>com.github.nautic.libs.h2</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>org.intellij</pattern>
-                                    <shadedPattern>com.github.nautic.libs.intellij</shadedPattern>
-                                </relocation>
-
-                                <relocation>
-                                    <pattern>revxrsal.zapper</pattern>
-                                    <shadedPattern>com.github.nautic.libs.revxrsal</shadedPattern>
-                                </relocation>
-                            </relocations>
-
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-        </plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.5.3</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>
